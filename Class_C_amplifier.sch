@@ -21,7 +21,7 @@ refdes=Cin
 T 45300 46500 5 10 0 0 0 0 1
 symversion=0.1
 T 45700 46000 5 10 1 1 0 0 1
-value=1uF
+value=1nF
 }
 C 46400 44100 1 0 0 gnd-1.sym
 C 44600 43700 1 0 0 gnd-1.sym
@@ -57,21 +57,20 @@ N 49800 46000 49800 45200 4
 T 49800 46000 5 10 1 1 0 0 1
 netname=Vdd
 }
-T 49900 46300 9 10 1 0 0 0 13
+T 50100 46800 9 10 1 0 0 0 8
 spice-epilog=.control
-dc Vin 0 10 0.1
-ac lin 1000000 15.915492024Meg 15.915492033Meg
-plot Vin Vout
 tran 1n 3u
-plot Vin Vout 
-plot i(V_IP1)
-noise v(Vin) Vin lin 100 1 100Meg
-setplot noise1
-let noise_figure=db(inoise_spectrum)/2-db(2*sqrt(boltz*290*50))
-plot noise_figure
+plot Vin Vout v(Vin, Vbase)
+plot i(V_IP1) v(Vin, Vbase)
+plot i(V_IP1) Vout
+pss 16e6 2e-6 Vout 1024 10 5 5e-3 uic
 .endc
 
 N 46000 45800 47100 45800 4
+{
+T 46000 45800 5 10 0 0 0 0 1
+netname=Vbase
+}
 C 47100 45300 1 0 0 npn-3.sym
 {
 T 48000 45800 5 10 0 0 0 0 1
