@@ -6,7 +6,7 @@ Rb GND Vbase 1000
 Cin Vin Vbase 1nF      
 Vd Vdd GND 3.3V
 Q1 Vout Vbase GND npndie   
-Vin Vin GND dc 1 ac 1 sin(0 1 15.9154943092MEG)
+Vin Vin GND ac 1 sin(0 1 15.9154943092MEG)
 C1 Vdd 1 100nF      
 L1 1 Vdd 1nH  
 Rtank 1 Vdd 10      

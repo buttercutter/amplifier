@@ -92,7 +92,7 @@ device=vac
 T 44300 45350 5 10 0 0 0 6 1
 footprint=none
 T 44300 44750 5 10 1 1 0 6 1
-value=dc 1 ac 1 sin(0 1 15.9154943092MEG)
+value=ac 1 sin(0 1 15.9154943092MEG)
 }
 C 48500 48700 1 270 0 capacitor-1.sym
 {
